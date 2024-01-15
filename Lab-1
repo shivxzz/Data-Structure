@@ -1,0 +1,225 @@
+Q1) Write a program which will read temperature value in Fahrenheit scale and print the value in Celsius scale.
+ALGORITHM:
+1) Declare two variables to store Fahrenheit and Celsius temperatures (fahrenheit and celsius).
+2) Prompt the user to enter the temperature in Fahrenheit.
+3) Read the input Fahrenheit temperature using scanf.
+4) Convert Fahrenheit to Celsius using the formula: C = (F - 32) * 5/9.
+5) Display the result using printf.
+
+CODE:
+#include <stdio.h>
+int main()
+{
+    float celsius, fahrenheit;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    celsius = (fahrenheit - 32) * 5 / 9;
+    printf("%.2f Fahrenheit = %.2f Celsius", fahrenheit, celsius);
+    return 0;
+}
+
+ 
+
+Q2) Write a program to enter length and width of a rectangle and find area and perimeter of the rectangle.
+ALGORITHM:
+1)	Declare variables to store the length, width, area, and perimeter of the rectangle (length, width, area, perimeter).
+2)	Prompt the user to enter the length of the rectangle and read the input using scanf.
+3)	Prompt the user to enter the width of the rectangle and read the input using scanf.
+4)	Calculate the area of the rectangle using the formula: area = length * width.
+5)	Calculate the perimeter of the rectangle using the formula: perimeter = 2 * (length + width).
+6)	Display the calculated area and perimeter using printf.
+
+CODE:
+#include <stdio.h>
+int main()
+{
+    float area ,length, width, perimeter;
+
+    printf("Enter length of the rectangle: ");
+    scanf("%f", &length);
+    printf("Enter width of the rectangle: ");
+    scanf("%f", &width);
+
+    area = length * width;
+
+    perimeter = 2 * (length + width);
+
+    printf("Area of the rectange = %f",area);
+    printf("Perimeter of rectangle = %f  ", perimeter);
+
+    return 0;
+}
+
+ 
+
+Q3) Write a program to enter marks of five subjects of a student and calculate total, average and percentage of all
+subjects.
+ALGORITHM:
+1)	Declare the variables like name of the 5 subjects average  total and the percentage(average and percentage with datatype float)
+2)	Taking input from the user of the 5 subjects and printing the marks with the help of printf.
+3)	Calculate the total of the marks of the subjects.
+4)	Calculate the average by dividing the total by the number of subjects (5 in this case).
+5)	Calculate the percentage by scaling the total to a percentage out of 100.
+6)	Display the total, average, and percentage using printf.
+
+CODE:
+#include<stdio.h>
+int main()
+{
+    int maths, chemistry, physics, biology, history, total;
+    float average, percentage;
+    printf("enter the subject maths marks: ");
+    scanf("%d", &maths);
+    printf("enter the subject chemistry marks: ");
+    scanf("%d", &chemistry);
+    printf("enter the subject physics marks: ");
+    scanf("%d", &physics);
+    printf("enter the subject biology marks: ");
+    scanf("%d", &biology);
+    printf("enter the subject history marks: ");
+    scanf("%d", &history);
+
+    total = maths + chemistry + physics + biology + history;
+    printf("the total marks of the five subjects is: %d\n", total);
+
+    average = (float)(maths + chemistry + physics + biology + history) / 5;
+    printf("the average marks of the 5 subjects is: %f\n", average);
+
+    percentage = ((float)total / 500) * 100;
+    printf("the percentage of the 5 subjects is: %f\n", percentage);
+    return 0;
+}
+
+ 
+
+Q4) Write four statements by using printf functionto print an asterisk pattern having 1, 3,5 and 7 asterisks (*) in successive lines so that it generates a triangular pattern as given below.
+
+
+        *
+
+
+     * *  *
+
+
+   * * * * *
+
+
+ * * * * * * *
+ALGORITHM:
+1.	Start with the outer loop to iterate through each row (total rows rows).
+Initialize i to 0.
+Continue iterating as long as i is less than rows.
+2.	For each row, use a nested loop to handle the spaces before the stars on each line.
+Initialize j to 0.
+Continue iterating as long as j is less than 2 * (rows - i) - 1.
+       Print a space character inside this loop.
+3.	After printing the spaces, use another nested loop to handle the printing of stars for each line.
+Initialize k to 0.
+Continue iterating as long as k is less than 2 * i + 1.
+Print a star character followed by a space.
+4.	Move to the next line after completing the inner loops to start a new row.
+5.	Repeat steps 2-4 for each row until the outer loop condition is no longer satisfied.
+6.	End the program.
+
+CODE:
+#include <stdio.h> 
+int main() 
+{ 
+    int rows = 5; 
+    for (int i = 0; i < rows; i++) { 
+
+        for (int j = 0; j < 2 * (rows - i) - 1; j++) { 
+
+            printf(" "); 
+        } 
+        for (int k = 0; k < 2 * i + 1; k++) { 
+
+            printf("* "); 
+        } 
+        printf("\n"); 
+    } 
+    return 0;
+}
+
+ 
+
+Q5) A ball is released from a height of Y meters. Each time it bounces on the floor, its velocity becomes halved. Write a program, which reads the value of Y and prints the total distance traversed by the ball when it touches the ground for the third time. Assume that the value of acceleration due to gravity, g, is 9.8
+ALGORITHM:
+1.	Input:
+Prompt the user to enter the initial height (y) in meters.
+2.	Constants:
+Define a constant variable g with the value 9.8 (acceleration due to gravity).
+3.	Initialization:
+Initialize total_distance and current_height to 0 and the user-input initial height y, respectively.
+4.	Loop (3 times):
+              Iterate three times using a for loop:
+Calculate bounce_height as half of the current_height.
+Add the sum of current_height and bounce_height to total_distance.
+Update current_height to the value of bounce_height for the next iteration.
+5.	Output:
+print the total distance traveled.
+6.	End of the program.
+
+CODE:
+#include <stdio.h>
+
+int main() {
+  double y, total_distance, current_height;
+  printf("Enter initial height (y meters): ");
+  scanf("%lf", &y);
+
+  const double g = 9.8;
+
+  total_distance = 0;
+  current_height = y;
+
+  for (int i = 0; i < 3; i++) {
+    
+    double bounce_height = current_height / 2;
+
+    total_distance += current_height + bounce_height;
+    
+    current_height = bounce_height;
+  }
+  printf("Total distance traveled: %.2f meters\n", total_distance);
+  return 0;
+}
+ 
+
+Q6) Consider a bank that offers fixed deposit accounts with cumulative (annually) interest on the balance available in the account. Write a C program that reads the amount initially invested (called Principal amount) in an account and interest rate. The program generates the balance available in the account at the end of each year for first five years.
+ALGORITHM:
+1.	Input:
+Declare variables principal and interest_rate.
+Prompt the user for the principal amount and read the input into principal.
+Prompt the user for the annual interest rate in percentage and read the input into interest_rate.
+Convert interest_rate to a decimal by dividing it by 100.
+2.	Loop (5 years):
+               Use a for loop with year ranging from 1 to 5.
+ Update principal using the formula: principal *= (1.0 + interest_rate).
+Print the balance for each year using printf.
+3.	Output:
+End the program.
+
+CODE:
+#include <stdio.h>
+
+int main() {
+  double principal, interest_rate;
+
+  printf("Enter principal amount: ");
+  scanf("%lf", &principal);
+  printf("Enter annual interest rate (%%): ");
+  scanf("%lf", &interest_rate);
+
+  interest_rate /= 100.0;
+
+  for (int year = 1; year <= 5; year++) {
+    principal *= (1.0 + interest_rate);
+    printf("Year %d: Balance = %.2f\n", year, principal);
+  }
+  return 0;
+}
+
+ 
+
+
